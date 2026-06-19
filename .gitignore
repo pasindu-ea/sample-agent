@@ -1,0 +1,36 @@
+# Environment & secrets
+.env
+
+# Build results
+bin/
+obj/
+out/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+[Aa]rtifacts/
+
+# .NET
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+project.lock.json
+project.fragment.lock.json
+*.nupkg
+*.snupkg
+
+# Rider / VS / VS Code
+.vs/
+.idea/
+.vscode/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
