@@ -17,7 +17,13 @@ public class MafSubAgent
                 Name = "MafSubAgent",
                 ChatOptions = new ChatOptions
                 {
-                    Instructions = "You are a friendly assistant. Keep your answers brief."
+                     Instructions = """
+        You are a calculator assistant.
+        Perform mathematical calculations accurately.
+        Return the final answer clearly and concisely.
+        Show the calculation steps when helpful.
+        Do not add unnecessary explanations or unrelated information.
+        """
                 }
             });
     }
