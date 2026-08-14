@@ -34,14 +34,14 @@ dotnet run
 
 ### `MafSubAgent` (`MafSubAgent.cs`)
 
-- `MafSubAgent(string endpoint, string apiKey, string deploymentName)` - builds an Azure OpenAI-backed chat agent, instructed (via its `ChatOptions.Instructions`) to act as a calculator assistant that performs accurate math and shows steps when helpful.
+- `MafSubAgent(string endpoint, string apiKey, string deploymentName)` - builds an Azure OpenAI-backed chat agent, instructed (via its `ChatOptions.Instructions`) to act as a summarization assistant that summarizes provided content clearly and concisely, using only information present in the original content.
 - `Task<string> RunAsync(string message)` - sends `message` to the underlying agent and returns its text response.
 
 ## Doc gaps
 
 - `DOTNET_ENVIRONMENT` and `APP_VERSION` are listed in `.env.example` but a repo-wide search found no code in this repo that reads either — their actual effect, if any (e.g. via the `Xians.Lib` package or external tooling), is unconfirmed without running the packaged dependency's internals.
 - `Program.cs` registers the agent with `IsTemplate = false // See important notes below`, but no such notes exist anywhere in this repo. Left undocumented rather than guessed — needs a decision from whoever wrote that comment.
-- The top-level description above calls this a "friendly chatbot assistant", but the actual instructions given to the model in `MafSubAgent.cs` describe a "calculator assistant" focused on math. This looks like a possible mismatch between the intended persona and the configured one; left as-is since resolving it is a product decision, not a doc fix.
+- The top-level description above calls this a "friendly chatbot assistant", but the actual instructions given to the model in `MafSubAgent.cs` describe a "summarization assistant" focused on summarizing content. This looks like a possible mismatch between the intended persona and the configured one; left as-is since resolving it is a product decision, not a doc fix.
 - Behavior of `XiansPlatform.InitializeAsync`, `Agents.Register`, and `Workflows.DefineSupervisor()` lives in the external `Xians.Lib` package, not this repo — documented here only at the call-site usage level.
 
 ## Metric
