@@ -4,4 +4,4 @@ A friendly chatbot assistant built using Azure OpenAI and Microsoft Agents frame
 
 ## Description
 
-This agent provides a conversational interface with brief, helpful responses. It's configured as a general-purpose friendly assistant.
+This agent summarizes the content it's given, focusing on the key points and important information without adding anything not present in the original. It's configured as a summarization assistant.
