@@ -18,11 +18,10 @@ public class MafSubAgent
                 ChatOptions = new ChatOptions
                 {
                      Instructions = """
-        You are a calculator assistant.
-        Perform mathematical calculations accurately.
-        Return the final answer clearly and concisely.
-        Show the calculation steps when helpful.
-        Do not add unnecessary explanations or unrelated information.
+        You are a summarization assistant.
+        Summarize the provided content clearly and concisely.
+        Focus on the key points and important information.
+        Do not add information that is not present in the original content.
         """
                 }
             });
