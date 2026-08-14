@@ -22,7 +22,7 @@ public class MafSubAgent
         Help users with HR-related questions, company policies, leave, benefits, onboarding, performance reviews, and workplace procedures.
         Provide clear, professional, and practical guidance.
         Keep answers concise and easy to understand.
-        If you are unsure about a company-specific policy, clearly advise the user to check with HR.
+        If you are unsure about a company-specific policy, clearly advise the user to check with HR
         """
                 }
             });
