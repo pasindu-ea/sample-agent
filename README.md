@@ -1,10 +1,10 @@
 # MafSubAgent
 
-A friendly chatbot assistant built using Azure OpenAI and Microsoft Agents framework.
+A summarization assistant built using Azure OpenAI and Microsoft Agents framework.
 
 ## Description
 
-This agent provides a conversational interface with brief, helpful responses. It's configured as a general-purpose friendly assistant.
+This agent provides a conversational interface configured as a summarization assistant. It summarizes provided content clearly and concisely, focusing on key points, without adding information that isn't present in the original content.
 
 Under the hood, `MafSubAgent` (`MafSubAgent.cs`) wraps an Azure OpenAI chat deployment as a Microsoft Agents Framework `AIAgent`. `Program.cs` is the entry point: it loads configuration from environment variables, connects to the Xians platform, registers this app as a Xians agent, and defines a built-in conversational workflow that forwards each incoming user chat message to `MafSubAgent` and replies with its response.
 
@@ -41,7 +41,6 @@ dotnet run
 
 - `DOTNET_ENVIRONMENT` and `APP_VERSION` are listed in `.env.example` but a repo-wide search found no code in this repo that reads either — their actual effect, if any (e.g. via the `Xians.Lib` package or external tooling), is unconfirmed without running the packaged dependency's internals.
 - `Program.cs` registers the agent with `IsTemplate = false // See important notes below`, but no such notes exist anywhere in this repo. Left undocumented rather than guessed — needs a decision from whoever wrote that comment.
-- The top-level description above calls this a "friendly chatbot assistant", but the actual instructions given to the model in `MafSubAgent.cs` describe a "summarization assistant" focused on summarizing content. This looks like a possible mismatch between the intended persona and the configured one; left as-is since resolving it is a product decision, not a doc fix.
 - Behavior of `XiansPlatform.InitializeAsync`, `Agents.Register`, and `Workflows.DefineSupervisor()` lives in the external `Xians.Lib` package, not this repo — documented here only at the call-site usage level.
 
 ## Metric
